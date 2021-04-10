@@ -57,7 +57,11 @@ api.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 api.use(express.static("public"));
-const whitelist = ["http://localhost:4000", "http://localhost:8080"];
+const whitelist = [
+  "http://localhost:4000",
+  "http://165.22.80.128:4000/",
+  "http://localhost:8080",
+];
 const corsOptions = {
   origin: function (origin, callback) {
     console.log("** Origin of request " + origin);
